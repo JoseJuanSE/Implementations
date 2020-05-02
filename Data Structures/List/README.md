@@ -1,7 +1,7 @@
-##List
-#Elemental Funtions:
+## List
+# Elemental Funtions:
 
-#Specifications: 
+# Specifications: 
 
 Funtion(): Parameters recived->what the function returns;
 Empty():->List;
@@ -10,7 +10,7 @@ Is_Empty:List->Bool;
 Head:List->Elem;
 Remain:List->List;
 
-#Axioms:
+# Axioms:
 --Axioms: Elem e,List p;
 [p1]	Is_Empty(Empty())=>True;
 [p2]	Is_Empty(Cons(e,p))=>False;
@@ -19,7 +19,7 @@ Remain:List->List;
 [p5]	Remain(Empty())->Error
 [p6]	Remain(Cons(e,p))=>p;
 
-#Otras Funciones:
+# otras Funciones:
 PrintListF -> Print a List in a given file
 PrintList -> Print a List on the screen
 Size -> Returns size of a given list
@@ -32,16 +32,16 @@ Is_Inlist -> Returns a bool value depending on whether a given element is in a g
 Comp -> Given two lists, returns true if both of these are equal
 Is_Palindrome -> Returns true if he given list is a palindrome
 
-#¿What is Elem.h?
+# ¿What is Elem.h?
 This library is a helpful way to modificated fast and easy with which element our structure will works, so if we want a list int, we set elem to int, o if we want a queue's list, we just do it, set elem to queue.
 
-#¿How to use this structure?
+# ¿How to use this structure?
 You have to have always Elem.h and List.h at the same binder that you .c that you will use.Feel you free to modified what you want and use this as you wish, to homework or development that you want.
 
-##Lista
+## Lista
 Funciones Elementeales:
 
-#Especificaciones: 
+# Especificaciones: 
 Funcion():Parametros que recibe->lo que regresa;
 Vacia():->Lista;
 Cons():Elem,Lista->Lista
@@ -49,7 +49,7 @@ EsVacia:Lista->Booleano;
 Cabeza:Lista->Elem;
 Resto:Lista->Lista;
 
-#Axiomas:
+# Axiomas:
 --Axiomas: Elem e,Lista p;
 [p1]	EsVacia(Vacia())=>Cierto;
 [p2]	EsVacia(Cons(e,p))=>false;
@@ -58,7 +58,7 @@ Resto:Lista->Lista;
 [p5]	Resto(Vacia())->Error
 [p6]	Resto(Cons(e,p))=>p;
 
-#Otras Funciones:
+# Otras Funciones:
 ImprimirListaF -> imprime lista en un archivo dado
 ImprimirLista -> imprime lista en la pantalla
 Tamaño -> Regresa el tamaño de una lista dada
@@ -71,8 +71,8 @@ Esta -> Se le da un elemento y una lista, la funcion regresa un true si esta en 
 Comp -> dadas dos listas se regresa un true si son iguales
 Espalind -> Dice si la lista dada es un palindromo
 
-#¿Que es Elem.h?
+# ¿Que es Elem.h?
 Este archivo cabecera sirve para modificar de forma rapida con que elemento trabajara nuestra estructura de forma que si queremos una lista de int, modificamos elem, o si queremos una lista de colas, modificamos elem.
 
-#¿Como usar las estructuras?
+# ¿Como usar las estructuras?
 Ten siempre Elem.h y List.h, estas en la misma carpeta que tengas el archivo .c de prueba que vayas a usar. Sietete con la libertad de modificarlas y usarlas a tu antojo, para la tarea o proyecto que desees.
