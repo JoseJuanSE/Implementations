@@ -4,7 +4,10 @@
 #include "Elem.h"
 #include "Lista.h"
 int main(int argc,char *argv[]){
-	//imprimir lista lexicograficamente en archivos
+	/*En este programa tienes que escrinbir por consola el nombre de un archivo txt, este tiene que estar en la misma
+		carpeta que el .c . Este programa te imprimira en el archivo que tu le digas todas las palabras dadas en el primer
+		archivo pero esta vez ordenada de forma lexicografica
+	*/
 	FILE *in=fopen(*++argv,"r");
 	FILE *out=fopen(*++argv,"w");
 	char pal[80],*pala;
