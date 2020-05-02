@@ -8,6 +8,6 @@ void ImpElem(Elem e){
 }
 bool Is_Equal(Elem a,Elem b){return a==b;}
 bool Less_Than(Elem e1,Elem e2){
-	return strcmp(e1,e2)<0; use if elem is string
+	return strcmp(e1,e2)<0; 
 	//return e1<e2;
 }
