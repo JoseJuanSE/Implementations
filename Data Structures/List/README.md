@@ -1,5 +1,5 @@
 ## List
-# Elemental Funtions:
+Elemental Funtions:
 
 # Specifications: 
 
