@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 #include "Elem.h"
-#include "Lista.h"
+#include "List.h"
 #define endl printf("\n");
 int main(){
    List a=Empty(),b=Empty();
