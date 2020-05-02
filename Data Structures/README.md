@@ -7,6 +7,10 @@ This library is a helpful way to modificated fast and easy with which element ou
 ## ¿How to use this structure?
 You have to have always Elem.h and List.h at the same binder that you .c that you will use. Feel you free to modified what you want and use this as you wish, to homework, development, or whatever.
 
+### Ready to be used
+* [List]{https://github.com/JoseJuanSE/Implementations/tree/master/Data%20Structures/List}
+* [Stack]{https://github.com/JoseJuanSE/Implementations/tree/master/Data%20Structures/Stack}
+
 # Estructuras
     Acerca de las estructuras
 
@@ -15,3 +19,7 @@ Este archivo cabecera sirve para modificar de forma rapida con que elemento trab
 
 ## ¿Como usar las estructuras?
 Ten siempre Elem.h y List.h, estas en la misma carpeta que tengas el archivo .c de prueba que vayas a usar. Sientete con la libertad de modificarlas y usarlas a tu antojo, para la tarea o los proyecto que desees.
+
+### Listo para se usado
+* [List]{https://github.com/JoseJuanSE/Implementations/tree/master/Data%20Structures/List}
+* [Stack]{https://github.com/JoseJuanSE/Implementations/tree/master/Data%20Structures/Stack}
