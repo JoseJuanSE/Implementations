@@ -1,14 +1,10 @@
 #include<bits/stdc++.h>
+#define vi vector<int>
 #include "RanVec.h"
 using namespace std;
 //Receives any vector, and return it sorted.
 //Algorithm Bubble_sort, complex O(n^2)  
-void ImpVec(vector<int> in){
-	for(int i=0;i<in.size();i++)
-		cout<<in[i]<<" ";
-	cout<<endl;
-}
-vector<int> Bubble_Sort(vector<int> n){	
+vi Bubble_Sort(vi n){	
 	for(int i=n.size()-1;i>0;i--)
 		for(int j=0;j<i;j++)
 			if(n[j]>n[j+1])
@@ -16,10 +12,9 @@ vector<int> Bubble_Sort(vector<int> n){
 	return n;
 }
 int main(){
-	vector<int> n=GetRanVec();
+	vi n=GetRanVec();
 	cout<<"Before Sort"<<endl;
-	ImpVec(n);
-	n=Bubble_Sort(n);
+	PrintVec(n);
 	cout<<"After Sort"<<endl;
-	ImpVec(n);
+	PrintVec(Bubble_Sort(n));
 }
