@@ -3,7 +3,7 @@
 #define vi vector<int>
 using namespace std;
 //Complex of this sorting algothim is O(NlogN)
-/*this implementation I consider is easy to understand
+/*this implementation I consider is easy to understand,
 however, could be inefficient in memory, We pass a lot of
 Vectors, problem: stack overflow*/
 vi Mix(vi a1,vi a2){
