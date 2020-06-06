@@ -21,7 +21,6 @@ void getnodes(){
         graph[x].push_back(make_pair(y,w));
         graph[y].push_back(make_pair(x,w));
     }
-    //cout<<"hola"<<endl;
 }
 //build shorthest paths
 void dijkstra(){
@@ -29,15 +28,15 @@ void dijkstra(){
     priority_queue<pair<int,int>>s;
     s.push(make_pair(0,0));
     while(!s.empty()){
-        //buscamos mas pequeño de todos, que no este visitado
+        //we need the smallest
         pair<int,int>x=s.top();
         int mini=-1*x.second,in=-1*x.first;  
         s.pop();
-        //si es infinito, ya no hay mas que buscar, pues este nodo no tiene conexion
+        //if is infinite, this node doesn´t have connetion
         if(sp[in]==infty)break;
-        //marcamos visitado el mas pequeño
+        //mark it
         vis[in]=true;
-        //construimos todos lo caminos disponibles a partir de este
+        //build all the paths from in vertex
         for(auto nodo : graph[in]){
             int y=nodo.first;
             int w=nodo.second;
@@ -48,10 +47,11 @@ void dijkstra(){
             }
         }
     }
+    //print shortest path values
     int gg=0;
     for(auto val : sp){
         if(gg++==n)break;
-        cout<<val<<" ";
+            cout<<val<<" ";
     }
     cout<<endl;
 }
@@ -69,7 +69,7 @@ void getpath(int x){
 }
 //source node always is going to be in zero node.
 
-//La complejidad de esta implementacion es O(ELogV)) donde n es el numero de nodos
+//Complex is O(ELogV)) 
 int main(){
     //iniciamos la distancia minima a cada nodo en infinio
     sp.assign(1000,infty);
