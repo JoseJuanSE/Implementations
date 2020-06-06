@@ -26,13 +26,13 @@ void getnodes(){
 //build shorthest paths
 void dijkstra(){
     sp[0]=0;
-    set<pair<int,int>>s;
-    s.insert(make_pair(0,0));
+    priority_queue<pair<int,int>>s;
+    s.push(make_pair(0,0));
     while(!s.empty()){
         //buscamos mas pequeño de todos, que no este visitado
-        pair<int,int>x=*s.begin();
-        int mini=x.second,in=x.first;  
-        s.erase(s.begin());
+        pair<int,int>x=s.top();
+        int mini=-1*x.second,in=-1*x.first;  
+        s.pop();
         //si es infinito, ya no hay mas que buscar, pues este nodo no tiene conexion
         if(sp[in]==infty)break;
         //marcamos visitado el mas pequeño
@@ -44,7 +44,7 @@ void dijkstra(){
             if(sp[y]>sp[in]+w){
                 sp[y]=sp[in]+w;
                 p[y]=in;
-                s.insert(make_pair(y,sp[y]));
+                s.push(make_pair(-y,-sp[y]));
             }
         }
     }
