@@ -24,3 +24,10 @@ void ImpLista(Lista l){
           ImpLista(resto(l));
      }
 }
+
+Lista eliminalista(Elem e,Lista l){
+    if(esvacia(l))return vacia();
+    if(strcmp(l->dato.nom,e.nom) == 0)return l->sig;
+    l->sig=eliminalista(e,l->sig);
+    return l;
+}

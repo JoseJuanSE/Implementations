@@ -36,9 +36,6 @@ Elem consulta(Elem e, TablaH t){
 
 TablaH elimina(Elem e, TablaH t){
     int llave=Hash(e);
-    while(!esvacia(t[llave]))
-        if(strcmp(t[llave]->dato.nom,e.nom) == 0){
-            t[llave]=t[llave]->sig;
-            return t;
-        }
+    t[llave]=eliminalista(e,t[llave]);
+    return t;
 }

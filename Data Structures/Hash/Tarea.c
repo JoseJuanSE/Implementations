@@ -4,12 +4,21 @@
 #include"Elem.h"
 #include"Lista.h"
 #include"TablaH.h"
-int main(){
+
+TablaH FillTable(){
     TablaH t=consH(55);
     int i=0;
     for(i;i<54;i++)
         t[i]=vacia();
-
+    FILE *in=fopen("Elementos.txt","r");
+    Elem niu;
+    while (fscanf(in,"%s%s%d", niu.nom,niu.sim,&niu.Atn)!=EOF)
+        t=insertaH(niu,t);
+    fclose(in);
+    return t;
+}
+int main(){
+    TablaH t=FillTable();
     while(1){
         system("cls");
         printf("Menu:\n");
