@@ -14,6 +14,8 @@ void mix(int ini,int mid,int fin){
         L[i]=a[i+ini];
     for(int i=0;i<szd;i++)
         D[i]=a[i+mid+1];
+
+
     int j=0,k=0,i;
     for(i=ini;i<=fin;i++){
         if(L[j]<D[k] and j<szi){
@@ -26,6 +28,8 @@ void mix(int ini,int mid,int fin){
         }
         if(j==szi or k==szd)break;
     }
+
+
     i++;
     while(j<szi){
         a[i]=L[j];
@@ -45,6 +49,10 @@ void merge_sort(int ini,int fin){
 int main(){
     ios_base::sync_with_stdio(0);cin.tie(0);
     a=GetRanVec();
+    cout<<"Unordered vector"<<endl;
+    PrintVec(a);
+    cout<<endl;
     merge_sort(0,a.size()-1);
+    cout<<"Ordered vector"<<endl;
     PrintVec(a);
 }
