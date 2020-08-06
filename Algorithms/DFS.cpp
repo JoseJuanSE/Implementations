@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 vector< vector<int> > graph;
+vector<bool>vis;
 int nv,ed;
 void readdata(){
     cout<<"\nNumber of vertex: ";
@@ -8,6 +9,7 @@ void readdata(){
     cout<<"\nNumber of edges: ";
     cin>>ed;
     graph.resize(nv+2);
+    vis.assign(nv+2,false);
     while(ed--){
         cout<<"from: ";
         int f,t;
@@ -18,30 +20,39 @@ void readdata(){
         graph[t].push_back(f);
     }
 }
-int BFS(int a,int b){
-    //first position -> current node where we are
-    //second position -> number of steps that we had done
-    queue<pair<int,int> >cola;
+/* A DFS IS AN BFS BUT USING A STACK
+bool DFS(int a,int b){
+    stack<int>cola;
     vector<bool>vis(nv+2,false);
-    cola.push({a,0}); //starting state
+    cola.push(a); //starting state
     while(!cola.empty()){
-        pair<int,int> cur=cola.front();
-        if(cur.first==b)return cur.second;
+        int cur=cola.top();
+        if(curt==b)return true;
         cola.pop();
-        vis[cur.first]=true;
-        for(int i : graph[cur.first]){
+        vis[cur]=true;
+        for(int i : graph[cur]){
             if(!vis[i])
-                cola.push({i,cur.second+1});
+                cola.push(i);
         }
     }
-    return -1;
+    return 0;
+}*/
+int to;
+bool DFS(int curr){
+    vis[curr]=true;
+    if(curr==to)
+        return 1;
+    for(int i:graph[curr])
+        if(!vis[i] and DFS(i)) return 1;
+    return 0;
 }
 int main(){
-    freopen("input.txt","r",stdin);freopen("output.txt","w",stdout);
     readdata();
-    int from,to;
+    int from;
     cin>>from>>to;
-    cout<<"Minimum number of steps to arrive from: "<<from<<" to: "<<to<<" = "<<BFS(from,to);
+    cout<<"Is There a path to get to: "<<to<<" from: "<<from<<"?: ";
+    string x=DFS(from)?"YES, it does":"No, it doesn't";
+    cout<<x;
     return 0;
 }
 /*
