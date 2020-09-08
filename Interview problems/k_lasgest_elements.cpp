@@ -52,7 +52,7 @@ struct pq{
 	}
 	void pop(){
 		if(size==0){
-			cout<<"COLA VACIA\n";
+			cout<<"Empty queue\n";
 		}
 		heap[1]=heap[size];
 		size--;
