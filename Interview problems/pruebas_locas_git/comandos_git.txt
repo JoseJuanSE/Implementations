@@ -1,0 +1,7 @@
+git branch --> nos dice que ramas existen y en cuale estamos
+git add --> agrega las modificaciones que quedamos a stage
+    add .--> agrega todos los archivos
+    add . --all --> agrega todos los archivos y carpetas
+git status --> nos dice si hay modificaciones de archivos
+git commit --> confirma los cambios en el repositiorio
+git reset HEAD --> saca todo de el stage
