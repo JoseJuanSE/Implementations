@@ -4,4 +4,5 @@ git add --> agrega las modificaciones que quedamos a stage
     add . --all --> agrega todos los archivos y carpetas
 git status --> nos dice si hay modificaciones de archivos
 git commit --> confirma los cambios en el repositiorio
+    commit -m --> permite que enfrete escribamos el resumen del commit sin entrar a vim
 git reset HEAD --> saca todo de el stage
