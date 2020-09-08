@@ -3,7 +3,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 vector<string> sol;
-int tot;
 bool is_valid(string x){
     int s=0;
     for(int i=0;i<x.size();i++){
@@ -24,7 +23,6 @@ void gen(int ope,int clo,string cur){
 //problem funtion:
 vector<string> generateParenthesis(int n){
     sol.clear();
-    tot=n;
     gen(n,n,"");
     return sol;
 }
