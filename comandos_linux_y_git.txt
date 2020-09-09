@@ -1,8 +1,31 @@
+-------------------GIT---------------------
+git init --> inicializamos una carpeta como repositiorio GIT
+
 git branch --> nos dice que ramas existen y en cuale estamos
-git add --> agrega las modificaciones que quedamos a stage
-    add .--> agrega todos los archivos
+
+git add   --> agrega las modificaciones que quedamos a stage
+    add . --> agrega todos los archivos
     add . --all --> agrega todos los archivos y carpetas
-git status --> nos dice si hay modificaciones de archivos
-git commit --> confirma los cambios en el repositiorio
-    commit -m --> permite que enfrete escribamos el resumen del commit sin entrar a vim
+
+git status --> nos dice si hay modificaciones de archivos y cuales ya fueron o no añadidos
+
+git commit --> confirma los cambios en el repositiorio pasandolos de stagin area 
+                al repositiorio
+    commit -m --> permite que enfrete escribamos el resumen del commit sin entrar 
+                a vim
+
+git push   --> manda nuestros cambios en el repositiorio a uno remoto
+
+git pull --> nos trae los cambios que otros han hecho en el repositiorio remoto
+
+git clone --> clona repositorios incluso remotos
+
+git diff --> podemos seleccionar un archivo que hemos modificado para ver 
+             las modificaciones que hicimos con respecto a el anterior
+             guardado en git
+
 git reset HEAD --> saca todo de el stage
+git revert HEAD --> se hace un commit para revertir el ultimo commit que se hizo
+
+-------------------LINUX---------------------
+cd -  --> nos permite regresar a la ruta anterior
