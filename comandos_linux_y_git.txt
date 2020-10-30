@@ -1,7 +1,13 @@
 -------------------GIT---------------------
 git init --> inicializamos una carpeta como repositiorio GIT
 
+git clone "url repositorio github" //clona repositorio
+
+git log nos muestra el registro de commits que hemos hecho
+
 git branch --> nos dice que ramas existen y en cuale estamos
+
+git show nos muestra los cambios que han existido sobre los dos ultimos commits
 
 git add   --> agrega las modificaciones que quedamos a stage
     add . --> agrega todos los archivos
@@ -13,6 +19,7 @@ git commit --> confirma los cambios en el repositiorio pasandolos de stagin area
                 al repositiorio
     commit -m --> permite que enfrete escribamos el resumen del commit sin entrar 
                 a vim
+    commit -am --> hace el add y commit en una sola instruccion
 
 git push   --> manda nuestros cambios en el repositiorio a uno remoto
 
@@ -20,12 +27,21 @@ git pull --> nos trae los cambios que otros han hecho en el repositiorio remoto
 
 git clone --> clona repositorios incluso remotos
 
-git diff --> podemos seleccionar un archivo que hemos modificado para ver 
-             las modificaciones que hicimos con respecto a el anterior
-             guardado en git
+git diff --> si se escribe solo nos enseña los cambios que hay con respecto a lo que hay
+             en staging area. tambiem podemos poner diff "hash1" "hash2", de esta forma nos 
+             muestra los cambios que hay en el commit de h1 con respecto al de h2
 
 git reset HEAD --> saca todo de el stage
+
 git revert HEAD --> se hace un commit para revertir el ultimo commit que se hizo
 
 -------------------LINUX---------------------
 cd -  --> nos permite regresar a la ruta anterior
+instruccion --palabra  //si es un solo - es para letras que son modificadores del comando
+
+cat --> nos muestra un archivo
+
+history --> nos muestra el historial de comandos que usamos, para repetir comando
+            escribimos !numero y se nos ejecuta ese numero de comando
+
+pwd --> nos dice donde estamos
