@@ -1,19 +1,26 @@
 -------------------GIT---------------------
 git init --> inicializamos una carpeta como repositiorio GIT
 
-git clone "url repositorio github" //clona repositorio
+git clone "url repositorio github" --> clona repositorio remotos o locales
 
-git log nos muestra el registro de commits que hemos hecho
+git checkout "nombre de rama" cambia de rama 
+
+gitk -> visual
 
 git branch --> nos dice que ramas existen y en cuale estamos
+               "nombre de rama" --> crea nueva rama
+        -d "nombre de rama" --> eliminar rama
+        show-branch --all ->muestra todas las ramas que hay o han habido 
 
-git show nos muestra los cambios que han existido sobre los dos ultimos commits
+git show --> nos muestra los cambios que han existido sobre los dos ultimos commits
 
 git add   --> agrega las modificaciones que quedamos a stage
     add . --> agrega todos los archivos
     add . --all --> agrega todos los archivos y carpetas
 
 git status --> nos dice si hay modificaciones de archivos y cuales ya fueron o no añadidos
+
+git merge "nombre rama" --> hacemos merge en la rama actual en la que estamos con la "nombre rama"
 
 git commit --> confirma los cambios en el repositiorio pasandolos de stagin area 
                 al repositiorio
@@ -25,15 +32,77 @@ git push   --> manda nuestros cambios en el repositiorio a uno remoto
 
 git pull --> nos trae los cambios que otros han hecho en el repositiorio remoto
 
-git clone --> clona repositorios incluso remotos
-
 git diff --> si se escribe solo nos enseña los cambios que hay con respecto a lo que hay
              en staging area. tambiem podemos poner diff "hash1" "hash2", de esta forma nos 
              muestra los cambios que hay en el commit de h1 con respecto al de h2
 
 git reset HEAD --> saca todo de el stage
 
+git reset "hash commit" --> --hard esto es peligroso, se regresa a esa version y borra todo lo que 
+                            hicimos despues, --soft deja todo lo que hicimos despeus en staging 
+                            por si queremos hacer un commit de esto :)
+                            Si queremos volver al pasado, mejor git chekout "hash commit"
+                            asi podemos ver lo que hicimos antes, para regresar al futuro
+                            git checkout master, se puede hacer commit de la version antigua
+
 git revert HEAD --> se hace un commit para revertir el ultimo commit que se hizo
+
+git rm --cached -->  Elimina los archivos del área de Staging y del 
+          próximo commit pero los mantiene en nuestro disco duro.
+    
+git rm --force: Elimina los archivos de Git y del disco duro. Git siempre guarda todo, 
+                por lo que podemos acceder al registro de la existencia de los archivos, 
+                de modo que podremos recuperarlos si es necesario (pero debemos usar comandos 
+                más avanzados).
+-------------CONFIG------------
+git config -l --> nos muestra la configuracion  
+set email and user:
+git config --global user.email"tu@email.com"
+git config --global user.name"tunombre"
+
+--------------LOG:--------------
+git log --> nos muestra el registro de commits que hemos hecho
+        --stat -> nos muestra cuantos bits se han agregado o quitado
+        --oneline --> Te muestra el id comm it y el título del commit.
+        --author=“Name Author” - Commits realizados por autor que cumplan exactamente con el nombre.
+agregar superlog 
+git config --global alias.superlog "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias arbolito='git log --all --oneline --graph --decorate'
+¿Qué tal todos?
+Para que sus bonitos alias no se les borren, como a mi. 
+
+Vayan a la carpeta C:/Usuarios/su_usuario
+Revisen que esté el archivo .bashrc o créenlo desde la consola con touch .bashrc y dentro guarden sus alias de la siguiente manera. Yo lo edité en VS Code
+Cierren todas sus instancias de Git Bash que tengan abiertas y ¡listos!
+-------------remote thigs-------------
+git remote add origin "link github" --> agrega en origin (o como quieras llamarle), tu remoto github
+
+git pull origin master --allow-unrelated-histories --> primer merge entre origin y master local
+se tiene que hacer esto puesto que no tenemos commits en comun
+
+-------------SSH-------------------
+Otro protocolo para conectarnos, es mas seguro y no va a pedir corre y contraseña cada vez
+
+crear: ssh-keygen -t rsa -b 4096 -C "email" --> crea la llave donde estamos
+eval $(ssh-agent -s)
+ssh-add "direccion de la llave"
+copiar llave publica en github 
+cambiar url de los repositorios por los ssh
+git remote set url origin "linkSSH"
+-----------TAGS------------------
+Los tags son versiones en git "realises"
+git tag -a v0.1 -m "Primera version funcional" "HASH del commit de la version" -> nos agrega el tag
+
+para ver nuestros tags 
+git show-ref --tags
+
+El tag anterior se queda en git pero no se actualiza en github ni haciendo push. Para esto, se hace lo siguiente:
+git push origin --tags
+
+como borramos tags de git? 
+git tag -d "nombre tag" 
+y de github? lo anterior +
+git push origin :refs/tags/"nombre tag"
 
 -------------------LINUX---------------------
 cd -  --> nos permite regresar a la ruta anterior
@@ -45,3 +114,5 @@ history --> nos muestra el historial de comandos que usamos, para repetir comand
             escribimos !numero y se nos ejecuta ese numero de comando
 
 pwd --> nos dice donde estamos
+
+alias "lo que quieras" = "commando"
