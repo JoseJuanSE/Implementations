@@ -11,7 +11,9 @@ git branch --> nos dice que ramas existen y en cuale estamos
                "nombre de rama" --> crea nueva rama
         -d "nombre de rama" --> eliminar rama
         show-branch --all ->muestra todas las ramas que hay o han habido 
-
+        -r -> te muestra las ramas de github
+        -a -> vez locales y remotas 
+        
 git show --> nos muestra los cambios que han existido sobre los dos ultimos commits
 
 git add   --> agrega las modificaciones que quedamos a stage
@@ -54,6 +56,23 @@ git rm --force: Elimina los archivos de Git y del disco duro. Git siempre guarda
                 por lo que podemos acceder al registro de la existencia de los archivos, 
                 de modo que podremos recuperarlos si es necesario (pero debemos usar comandos 
                 más avanzados).
+git stash --> guarda los cambios hechos para despues (nos regresa a los cambios hechos en el commit anterior)
+        list -> muestra los cambios hechos en stash
+        pop -> los cambios regresan
+        branch "nombre rama" -> pone los cambios guardados en stash en una rama
+        drop -> tira lo que este en stash
+
+git clean --dry-run -->borrar cosas que no quieres
+
+git cherry-pick "hash" --> trae commit viejo de otra rama a master
+
+git commit --amend --> adjunta archivos que no metimos al ultimo commit a ese commit
+
+git blame "archivo" -L(#lineaini),#lineafin -> nos muestra quien y cuando modifico cada linea por ultima vez 
+
+git config --global alias.stats "shortlog -sn --all --no-merges"
+|
+git stats -> nos muestra cuantos commits ha hecho cada miembro del equipo 
 -------------CONFIG------------
 git config -l --> nos muestra la configuracion  
 set email and user:
@@ -68,12 +87,19 @@ git log --> nos muestra el registro de commits que hemos hecho
 agregar superlog 
 git config --global alias.superlog "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias arbolito='git log --all --oneline --graph --decorate'
+
+git log -S "palabra" -> me enseña todos los commits en los que aparece esa palabra 
 ¿Qué tal todos?
 Para que sus bonitos alias no se les borren, como a mi. 
 
 Vayan a la carpeta C:/Usuarios/su_usuario
 Revisen que esté el archivo .bashrc o créenlo desde la consola con touch .bashrc y dentro guarden sus alias de la siguiente manera. Yo lo edité en VS Code
 Cierren todas sus instancias de Git Bash que tengan abiertas y ¡listos!
+
+git reflog --> se ve todo, de aqui sacamos hashes y hacemos git reset --HARD y volvemos a la normalidad todo aun que se haya ido al carajo :)
+
+git grep "palabra" -> nos dice todos los lugares donde aparece esa palabra 
+        -c  "palabra" -> nos muestra cuantas veces aparece esta palabra en x archivos
 -------------remote thigs-------------
 git remote add origin "link github" --> agrega en origin (o como quieras llamarle), tu remoto github
 
