@@ -14,6 +14,7 @@ struct myqueue{
         s = 0;
     }
     void push(int x){
+        s++;
         if(fin == nullptr){ini = fin = new nodo(x);return ;}
         fin->next = new nodo(x);
         fin = fin->next;
