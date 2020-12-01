@@ -26,7 +26,7 @@ struct myqueue{
         else 
             ini=ini->next;
         s--;
-        free(t);
+        delete(t);
     }
     int front(){return ini->val;}
     int size(){return s;}
