@@ -13,9 +13,13 @@ struct myqueue{
         ini = fin = nullptr;
         s = 0;
     }
+    bool empty(){return fin==nullptr;}
     void push(int x){
         s++;
-        if(fin == nullptr){ini = fin = new nodo(x);return ;}
+        if(fin == nullptr){
+            ini = fin = new nodo(x);
+            return ;
+        }
         fin->next = new nodo(x);
         fin = fin->next;
         fin->next = nullptr;
@@ -31,5 +35,8 @@ struct myqueue{
     }
     int front(){return ini->val;}
     int size(){return s;}
-    bool empty(){return fin==nullptr;}
 };
+//impletar estatica
+//implementar en dimica
+//2, 3
+//canguros de omega up

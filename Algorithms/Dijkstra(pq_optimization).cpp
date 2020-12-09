@@ -5,14 +5,13 @@ using namespace std;
 int n;
 
 //weighted graph first-> graph, second-> weight
-vector<pair <int,int> > graph[1000];
+vector<pair <int,int> > graph[100005];
 
 //shorthest paths vector
 vector<int>sp;
 //paths
 vector<int>p;
-//visited array
-vector<bool>vis;
+
 void getnodes(){
     int e,x,y,w;
     cin>>n>>e;
@@ -34,8 +33,6 @@ void dijkstra(){
         s.pop();
         //if is infinite, this node doesn´t have connetion
         if(sp[in]==infty)break;
-        //mark it
-        vis[in]=true;
         //build all the paths from in vertex
         for(auto nodo : graph[in]){
             int y=nodo.first;
@@ -72,17 +69,15 @@ void getpath(int x){
 //Complex is O(ELogV)) 
 int main(){
     //iniciamos la distancia minima a cada nodo en infinio
-    sp.assign(1000,infty);
-    //vector de nodos visitados
-    vis.assign(1000,0);
+    sp.assign(100005,infty);
     //vector que indica su padre (el nodo mas optimo para llegar a el)
-    p.resize(1000);
+    p.resize(100005);
     //lee el grafo
     getnodes();
     //construye dijkstra
     dijkstra();
     //nos imprime el camino mas barato al nodo 6
-    getpath(6);
+    getpath(n);
     return 0;
 }
 /*
