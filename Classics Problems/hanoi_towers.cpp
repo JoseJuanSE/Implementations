@@ -10,6 +10,7 @@ int hanoi(int disks,int start,int end){
     hanoi(disks-1,other,end);
     return steps;
 }
+
 int main(){
     int n;
     //number of disks
