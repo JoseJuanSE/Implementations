@@ -261,7 +261,7 @@ double Evalua(vector<Token> &tokens, int indIni, int indFin) {
             throw runtime_error("Operador desconocido");
     }
 }
-
+// Evaluador de operaciones +, -, *, /, ^, acepta parentesis.
 int main() {
     string s;
     getline(cin, s); // leemos con todo y espacios la expresion
